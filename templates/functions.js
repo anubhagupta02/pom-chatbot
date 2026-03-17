@@ -1,4 +1,3 @@
-console.log("=== Page loaded, script initialized ===");
 
 async function submitQuery() {
     const query = document.getElementById('queryInput').value.trim();
