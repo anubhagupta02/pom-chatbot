@@ -4,7 +4,7 @@
 
 from google import genai
 
-client = genai.Client(api_key="AIzaSyDSI9RO0Dlp5kKKpeURYgU4PjXrhytkmV8")
+client = genai.Client(api_key="ADD_YOUR_Google_Gemini_Key")
 
 models = client.models.list()
 
