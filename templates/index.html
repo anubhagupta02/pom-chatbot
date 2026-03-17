@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POM Chatbot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .chat-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        .query-input {
+            margin-bottom: 20px;
+        }
+        .results-table {
+            margin-top: 20px;
+        }
+        .sql-display {
+            background-color: #f1f3f4;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="chat-container">
+            <h1 class="text-center mb-4">POM Chatbot</h1>
+            <div class="query-input">
+                <div class="input-group">
+                    <input type="text" id="queryInput" class="form-control" placeholder="Enter your query (e.g., 'Show me all active projects')">
+                    <button class="btn btn-primary" onclick="submitQuery()">Submit</button>
+                </div>
+            </div>
+            <div id="loading" class="text-center" style="display: none;">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                Processing your query...
+            </div>
+            <div id="results" style="display: none;">
+                <h5>Generated SQL:</h5>
+                <div id="sqlDisplay" class="sql-display"></div>
+                <h5>Results:</h5>
+                <div class="results-table">
+                    <table id="dataTable" class="table table-striped table-bordered">
+                        <thead id="tableHead"></thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="error" class="alert alert-danger" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
